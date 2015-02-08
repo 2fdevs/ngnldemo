@@ -1,0 +1,6 @@
+/.idea/
+/.sass-cache/
+/app/bower_components
+/app/styles/main.css
+/app/styles/main.css.map
+/app/styles/themes/

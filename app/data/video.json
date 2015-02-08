@@ -1,0 +1,34 @@
+{
+  "title": "Videogular",
+  "sources": [
+    {"src": "http://static.videogular.com/assets/videos/videogular.mp4", "type": "video/mp4"},
+    {"src": "http://static.videogular.com/assets/videos/videogular.webm", "type": "video/webm"}
+  ],
+  "poster": "http://static.videogular.com/assets/images/videogular.png",
+  "quizes": [
+    {
+      "index": 0,
+      "showAt": 20,
+      "correct": "0",
+      "show": false,
+      "question": "How much amazing Videogular is?",
+      "answers": [
+        "Pretty amazing",
+        "Good shit",
+        "Meh..."
+      ]
+    },
+    {
+      "index": 1,
+      "showAt": 40,
+      "correct": "1",
+      "show": false,
+      "question": "Carl Sagan was...",
+      "answers": [
+        "A band from 90's",
+        "An astrophysicist and science communicator",
+        "A Nokia mobile phone"
+      ]
+    }
+  ]
+}

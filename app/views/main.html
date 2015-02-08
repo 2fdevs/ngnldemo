@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="videogular-container">
+                <videogular vg-player-ready="controller.onPlayerReady($API)"
+                            vg-update-time="controller.onUpdateTime($currentTime, $duration)">
+                    <vg-media vg-src="controller.video.sources"></vg-media>
+
+                    <vg-controls>
+                        <vg-play-pause-button></vg-play-pause-button>
+                        <vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
+                        <vg-scrub-bar>
+                            <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                        </vg-scrub-bar>
+                        <vg-time-display>{{ timeLeft | date:'mm:ss' }}</vg-time-display>
+                        <vg-volume>
+                            <vg-mute-button></vg-mute-button>
+                            <vg-volume-bar></vg-volume-bar>
+                        </vg-volume>
+                        <vg-fullscreen-button></vg-fullscreen-button>
+                    </vg-controls>
+
+                    <vg-poster vg-url='controller.video.poster'></vg-poster>
+                    <vg-buffering></vg-buffering>
+                    <vg-overlay-play></vg-overlay-play>
+
+                    <section class="title" ng-show="controller.API.currentTime >= 0 && controller.API.currentTime <= 10000">
+                        {{controller.video.title}}
+                    </section>
+
+                    <div class="cover"></div>
+                </videogular>
+
+                <div class="my-show-hide-animation" ng-repeat="quiz in controller.quizes" ng-show="quiz.show">
+                    <form name="{{ 'question' + $index }}" ng-submit="controller.onSendForm()" novalidate>
+                        <h4>{{quiz.question}}</h4>
+                        <div ng-repeat="answer in quiz.answers">
+                            <input type="radio" value="{{$index}}" ng-model="controller.answers[quiz.index]">
+                            <label>{{answer}}</label>
+                        </div>
+
+                        <button type="submit">send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
