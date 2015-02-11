@@ -25,6 +25,7 @@ $tablet-height: $tablet-width * 9 / 16;
     position: absolute;
     top: 10px;
     left: 20px;
+    z-index: 10;
 }
 
 .my-show-hide-animation.ng-hide-add,
